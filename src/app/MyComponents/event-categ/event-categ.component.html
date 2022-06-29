@@ -1,0 +1,23 @@
+<nav>
+    <div class="container-fluid">
+      <div>
+        <ul class="list-group list-group-horizontal">
+          <li [ngClass]="{'active':event_category==='All_Events'}" class="btn" (click)="onClick('All_Events')">
+            All Events
+          </li>
+          <li [ngClass]="{'active':event_category==='Webinars'}" class="btn" (click)="onClick('Webinars')">
+            Webinars
+          </li>
+          <li [ngClass]="{'active':event_category==='Coding'}" class="btn" (click)="onClick('Coding')">
+            Coding Events
+          </li>
+          <li [ngClass]="{'active':event_category==='Bootcamp'}" class="btn" (click)="onClick('Bootcamp')">
+            Bootcamp Events
+          </li>
+          <li [ngClass]="{'active':event_category==='Workshop'}" class="btn" (click)="onClick('Workshop')">
+            Workshop
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,16 @@
+<h1 class="text-center mb-3 mt-3">Events</h1>
+<div class="container border rounded">
+    <div class="border-bottom ">
+        <app-event-categ (event_cat)="add_event_cat($event)"></app-event-categ>
+    </div>
+    <div class="border-bottom">
+        <app-event-sub-categ (event_sub_cat)="add_event_sub_cat($event)"></app-event-sub-categ>
+    </div>
+    <div class="w-75 d-inline-block">
+          <app-event-display [event_type]="event_type"></app-event-display>
+    </div>
+    <div class="w-25 d-inline-block">
+          <app-tag-lis (tag_l)="add_tag_l($event)"></app-tag-lis>
+    </div>
+</div>
+  

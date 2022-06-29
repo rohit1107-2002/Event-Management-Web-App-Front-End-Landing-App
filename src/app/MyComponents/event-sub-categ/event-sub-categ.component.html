@@ -1,0 +1,14 @@
+<nav>
+    <div class="container-fluid">
+      <div>
+        <ul class=" list-group list-group-horizontal">
+          <li [ngClass]="{'active':event_sub_category==='Upcoming'}" class="btn" (click)="onClick('Upcoming')">
+            Upcoming
+          </li>
+          <li [ngClass]="{'active':event_sub_category==='Archived'}" class="btn" (click)="onClick('Archived')">
+            Archived
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

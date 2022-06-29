@@ -1,0 +1,27 @@
+<h1 class="text-center mb-3 mt-3">TAGS</h1>
+<nav>
+    <div class="container-fluid">
+      <div>
+        <ul>
+          <li [ngClass]="{'active':tag==='Interview_Preparation' }" class="btn" (click)="onClick('Interview_Preparation')">
+            Interview Preparation
+          </li>
+          <li [ngClass]="{'active':tag==='Contest_Solutions'}" class="btn" (click)="onClick('Contest_Solutions')">
+            Contest Solutions
+          </li>
+          <li [ngClass]="{'active':tag==='Competitive_Programming'}" class="btn" (click)="onClick('Competitive_Programming')">
+            Competitive Programming
+          </li>
+          <li [ngClass]="{'active':tag==='CPP'}" class="btn" (click)="onClick('CPP')">
+            CPP
+          </li>
+          <li [ngClass]="{'active':tag==='Java'}" class="btn" (click)="onClick('Java')">
+            Java
+          </li>
+          <li [ngClass]="{'active':tag==='Contest'}" class="btn" (click)="onClick('Contest')">
+            Contest
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

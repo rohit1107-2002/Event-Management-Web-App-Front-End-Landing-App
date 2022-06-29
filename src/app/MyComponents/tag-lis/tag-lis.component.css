@@ -1,0 +1,28 @@
+ul, li {
+    list-style: none;
+}
+ul {
+    width: 100%;
+}
+.btn{
+    float: left;
+    margin: 5px;
+}
+li{
+    
+    display: inline-block; 
+    padding:5px;
+    font-size:15px;
+    background-color:rgb(230, 232, 230);
+    color:#141212;
+}
+a{
+    list-style: none;
+}
+h1{
+    font-size: large;
+    color: rgb(112, 113, 113);
+}
+.active{
+    background-color:rgb(235, 90, 13);
+}
