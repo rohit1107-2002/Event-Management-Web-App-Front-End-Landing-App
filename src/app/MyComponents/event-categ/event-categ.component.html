@@ -2,19 +2,19 @@
     <div class="container-fluid">
       <div>
         <ul class="list-group list-group-horizontal">
-          <li [ngClass]="{'active':event_category==='All_Events'}" class="btn" (click)="onClick('All_Events')">
+          <li [ngClass]="{'active':this.event_type.event_cat==='All_Events'}" class="btn" (click)="onClick('All_Events')">
             All Events
           </li>
-          <li [ngClass]="{'active':event_category==='Webinars'}" class="btn" (click)="onClick('Webinars')">
+          <li [ngClass]="{'active':this.event_type.event_cat==='Webinars'}" class="btn" (click)="onClick('Webinars')">
             Webinars
           </li>
-          <li [ngClass]="{'active':event_category==='Coding'}" class="btn" (click)="onClick('Coding')">
+          <li [ngClass]="{'active':this.event_type.event_cat==='Coding'}" class="btn" (click)="onClick('Coding')">
             Coding Events
           </li>
-          <li [ngClass]="{'active':event_category==='Bootcamp'}" class="btn" (click)="onClick('Bootcamp')">
+          <li [ngClass]="{'active':this.event_type.event_cat==='Bootcamp'}" class="btn" (click)="onClick('Bootcamp')">
             Bootcamp Events
           </li>
-          <li [ngClass]="{'active':event_category==='Workshop'}" class="btn" (click)="onClick('Workshop')">
+          <li [ngClass]="{'active':this.event_type.event_cat==='Workshop'}" class="btn" (click)="onClick('Workshop')">
             Workshop
           </li>
         </ul>

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Event_type } from 'src/app/Event_type';
-import {HttpClient} from '@angular/common/http';
+import { Component,Input,OnInit } from '@angular/core';
+import { Event_details } from 'src/app/Event_details';
 
 @Component({
   selector: 'app-event-display',
@@ -9,19 +8,15 @@ import {HttpClient} from '@angular/common/http';
 })
 export class EventDisplayComponent implements OnInit {
 
-  @Input() event_type: Event_type = new Event_type;
-  li:any;
-  lis=[];
-  constructor(private http : HttpClient) { 
-    
+  @Input() detail: Event_details = new Event_details;
+  date:any;
+
+  constructor() {  
   }
 
   ngOnInit(): void {
-    let url="http://localhost:3000/api/v1/events?event_category="+this.event_type.event_cat+"&event_sub_category="+this.event_type.event_sub_cat+"&tag_list="+this.event_type.tag_list;
-    this.http.get(url).subscribe(Response => {
-      console.log(Response)
-      this.li=Response;
-      this.lis=this.li.list;
-    });
+    console.log(this.detail.reg_et)
+    this.date = new Date(this.detail.reg_et).toLocaleString("en-us")
+    console.log(this.date)
   }
 } 

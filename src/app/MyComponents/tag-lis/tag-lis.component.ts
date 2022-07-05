@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { Event_type } from 'src/app/Event_type';
 
 @Component({
   selector: 'app-tag-lis',
@@ -8,9 +10,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TagLisComponent implements OnInit {
 
   tag:string
-  @Output() tag_l: EventEmitter<string>=new EventEmitter();
-  
-  constructor() { 
+  @Input() event_type: Event_type = new Event_type;
+
+  constructor(private router:Router) { 
     this.tag="";
   }
 
@@ -24,6 +26,6 @@ export class TagLisComponent implements OnInit {
     else
       this.tag=s;
     console.log(this.tag);
-    this.tag_l.emit(this.tag);
+    this.router.navigateByUrl("/events?event_category="+this.event_type.event_cat+"&event_sub_category="+this.event_type.event_sub_cat+"&tag_list="+this.tag);
   }
 } 

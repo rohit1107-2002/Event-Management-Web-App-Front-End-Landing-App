@@ -12,6 +12,7 @@ import { EventSubCategComponent } from './MyComponents/event-sub-categ/event-sub
 import { EventDisplayComponent } from './MyComponents/event-display/event-display.component';
 import { EventItemComponent } from './MyComponents/event-item/event-item.component';
 import { TagLisComponent } from './MyComponents/tag-lis/tag-lis.component';
+import { HomeComponent } from './MyComponents/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TagLisComponent } from './MyComponents/tag-lis/tag-lis.component';
     EventSubCategComponent,
     EventDisplayComponent,
     EventItemComponent,
-    TagLisComponent
+    TagLisComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

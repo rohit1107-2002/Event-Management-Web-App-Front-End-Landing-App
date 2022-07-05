@@ -1,1 +1,12 @@
-<p>event-item works!</p>
+<div class="card">
+    <img class="card-img-top" src={{detail.cover_image}} alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{detail.title}}</h5>
+        <p class="card-text">{{detail.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Starts on : {{date}}</li>
+        <li class="list-group-item">Entry Fee : {{detail.fees}}</li>
+        <li class="list-group-item">Venue : {{detail.venue}}</li>
+    </ul>
+</div>
