@@ -11,6 +11,7 @@ li {
     width: 20%;
     font-weight: bold;
     color: rgb(117, 119, 120);
+    margin-right: 10px;
 }
 a{
     list-style: none;

@@ -3,6 +3,9 @@ import { Event_type } from 'src/app/Event_type';
 import {HttpClient} from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Event_details } from 'src/app/Event_details';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -13,16 +16,24 @@ import { Event_details } from 'src/app/Event_details';
 export class MainComponent implements OnInit {
 
   
-  event_type:Event_type;
+  event_type: Event_type = new Event_type;
   li:any;
   event_details: Event_details[] = [];
+  localItem:string | null;
+  token:string
 
-  constructor(private http : HttpClient,private route: ActivatedRoute) { 
+  constructor(private http : HttpClient,private route: ActivatedRoute,private router:Router) { 
     
-    this.event_type={
-      event_cat:'All_Events',
-      event_sub_cat:'Upcoming',
-      tag_list:''
+    this.localItem=localStorage.getItem('token');
+    if(this.localItem==null)
+    {
+      this.token="";
+      alert('Login to see events');
+      this.router.navigateByUrl("/login");
+    }
+    else
+    {
+      this.token=this.localItem;
     }
   }
 
@@ -44,14 +55,17 @@ export class MainComponent implements OnInit {
           url="http://localhost:3000/api/v1/events?event_category="+this.event_type.event_cat+"&event_sub_category="+this.event_type.event_sub_cat+"&tag_list=";
         else
           url="http://localhost:3000/api/v1/events?event_category="+this.event_type.event_cat+"&event_sub_category="+this.event_type.event_sub_cat+"&tag_list="+this.event_type.tag_list;
-
+        
+        
+        const headers = new HttpHeaders({ 'Authorization': this.token })
         // let url="http://localhost:3000/api/v1/events?event_category=All_Events&event_sub_category=Upcoming";
-          this.http.get(url).subscribe(Response => {
+          this.http.get<any>(url,{headers}).subscribe(Response => {
             console.log(Response)
             this.li=Response;
             this.event_details=this.li;
             console.log(this.event_details);
           });    
+                    
       }
     );
   }

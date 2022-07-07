@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <h1 class="text-center mb-3 mt-3">Events</h1>
 <div class="container border rounded">
     <div class="border-bottom ">
@@ -20,7 +21,7 @@
                     <ng-template #elseBlock>
                         <div class="row" *ngFor="let detail of event_details">   
                             <div class="col-lg-5 mt-4 mb-4">
-                                <app-event-display [detail]="detail"></app-event-display>
+                                <app-event-display [event_type]="event_type" [detail]="detail"></app-event-display>
                             </div>
                         </div>
                     </ng-template>

@@ -10,6 +10,11 @@
             <li class="list-group-item">Venue : {{detail.venue}}</li>
         </ul>
         <div class="card-body">
-            <button class="btn btn-success btn-md float-right">Register Now</button>
+            <div *ngIf="this.size===0; else elseBlock">
+                <button class="btn btn-success btn-md float-right" (click)="register()" >Register Now</button>
+            </div>
+            <ng-template #elseBlock>
+                <button class="btn btn-success btn-md float-right" disabled >Registered</button>
+            </ng-template>
         </div> 
     </div>

@@ -1,7 +1,7 @@
 <nav>
     <div class="container-fluid">
       <div>
-        <ul class="list-group list-group-horizontal">
+        <ul class="list-group list-group-horizontal overflow-auto">
           <li [ngClass]="{'active':this.event_type.event_cat==='All_Events'}" class="btn" (click)="onClick('All_Events')">
             All Events
           </li>

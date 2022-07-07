@@ -13,6 +13,9 @@ import { EventDisplayComponent } from './MyComponents/event-display/event-displa
 import { EventItemComponent } from './MyComponents/event-item/event-item.component';
 import { TagLisComponent } from './MyComponents/tag-lis/tag-lis.component';
 import { HomeComponent } from './MyComponents/home/home.component';
+import { LoginComponent } from './MyComponents/login/login.component';
+import { SignupComponent } from './MyComponents/signup/signup.component';
+import { NavComponent } from './MyComponents/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HomeComponent } from './MyComponents/home/home.component';
     EventDisplayComponent,
     EventItemComponent,
     TagLisComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
