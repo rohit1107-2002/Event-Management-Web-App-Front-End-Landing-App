@@ -9,19 +9,19 @@
     </div>
     <div class="row">
         <div class="col-sm-9">
-                <div *ngIf="this.event_details.length===0; else elseBlock" class="text-center">No Events to display</div>
+                <h4 *ngIf="this.event_details.length===0; else elseBlock" class="position-absolute top-50 start-50 translate-middle" >No Events to display</h4>
                 <ng-template #elseBlock>
                     <div *ngIf="this.event_type.event_sub_cat==='Archived'; else elseBlock">
-                        <div class="row" *ngFor="let detail of event_details">   
-                            <div class="col-lg-5 mt-4 mb-4">
+                        <div class="row">
+                            <div *ngFor="let detail of event_details" class="col-sm-6 mt-4 mb-4 ">
                                 <app-event-item [detail]="detail"></app-event-item>
                             </div>
                         </div>
                     </div>
                     <ng-template #elseBlock>
-                        <div class="row" *ngFor="let detail of event_details">   
-                            <div class="col-lg-5 mt-4 mb-4">
-                                <app-event-display [event_type]="event_type" [detail]="detail"></app-event-display>
+                        <div class="row ">
+                            <div *ngFor="let detail of event_details" class="col-sm-6 mt-4 mb-4">
+                                <app-event-display [detail]="detail"></app-event-display >
                             </div>
                         </div>
                     </ng-template>

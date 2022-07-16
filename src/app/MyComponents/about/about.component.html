@@ -1,2 +1,29 @@
 <app-nav></app-nav>
-<p>About</p>
+
+<body>
+    <h1 class="mb-5 mt-5 text-center">Welcome to Events Page!!</h1>
+    <ul>
+        <li><h3 class="mb-5 mt-5">You can see all the events.</h3></li>
+        <li><h3 class="mb-5 mt-5">You will be able to filter the events by event type, upcoming/past events and tags.</h3></li>
+        <li><h3 class="mb-5 mt-5">You can register in any particular event.</h3></li>
+    </ul>
+
+    <div class="text-center">
+        <div *ngIf="this.token===null; else elseBlock">
+            <form class="form-inline">
+                <h5 class="mb-5">Please Signup/Login to see Events.</h5>
+                <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/login">Log In</a>
+                <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/signup">Sign Up</a>
+            </form>
+        </div>
+        <ng-template #elseBlock>
+            <div>   
+                <form class="form-inline">
+                    <h5 class="mb-5">Proceed to Events page.</h5>
+                    <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" (click)="proceed()">Events</a>
+                </form>
+            </div>
+        </ng-template>
+        <p class="mt-5 mb-3 text-muted">&copy; 2022 Event Management</p>
+    </div>
+</body>

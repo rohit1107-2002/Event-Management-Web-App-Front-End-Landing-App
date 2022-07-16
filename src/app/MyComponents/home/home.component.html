@@ -1,2 +1,35 @@
 <app-nav></app-nav>
-<p>Home Page</p>
+<!-- <p>Home Page</p> -->
+
+
+<body class="text-center">
+<form class="form-signin">
+    <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+    <h1 class="mb-5 mt-5">Welcome!!</h1>
+    
+    <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
+    <!-- <form class="form-inline">
+        <h5 class="mb-5">Please Signup/Login to see Events.</h5>
+        <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/login">Log In</a>
+        <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/signup">Sign Up</a>
+    </form> -->
+    <div *ngIf="this.token===null; else elseBlock">
+        <form class="form-inline">
+            <h5 class="mb-5">Please Signup/Login to see Events.</h5>
+            <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/login">Log In</a>
+            <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" routerLink="/signup">Sign Up</a>
+        </form>
+    </div>
+    <ng-template #elseBlock>
+        <div>   
+            <form class="form-inline">
+                <h5 class="mb-5">Proceed to Events page.</h5>
+                <a class="btn btn-md btn-primary my-2 my-sm-0 mx-1" (click)="proceed()">Events</a>
+            </form>
+        </div>
+    </ng-template>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022 Event Management</p>
+</form>
+</body>
+
