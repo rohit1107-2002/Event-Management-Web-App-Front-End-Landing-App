@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Demo Video
 
-https://drive.google.com/file/d/1S3zzFCo-lnFW0TOqxSpDXGnpdSNW5j7V/view
+Youtube Link - https://www.youtube.com/watch?v=mJSet2Kugt0
